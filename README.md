@@ -1,1 +1,1 @@
-# Repo with instructions to set up RAG, Fine-Tuning and Serving demos/workshops for LLM.
+# Repo with instructions to set up RAG, Fine-Tuning and Serving demos/workshops for LLMs on OpenShift AI.
