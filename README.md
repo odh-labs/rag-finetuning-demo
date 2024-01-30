@@ -1,1 +1,1 @@
-# rag-finetuning-demo
+# Repo with instructions to set up RAG, Fine-Tuning and Serving demos/workshops for LLM.
