@@ -1,0 +1,8 @@
+﻿kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: chat-doc-configmap
+  namespace: llm-rag
+data:
+  INFERENCE_SERVER_URL: hf-text-generation-inference-server.llm-rag.svc.cluster.local
+  REDIS_HOST: redis-stack.redis.svc.cluster.local
