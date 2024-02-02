@@ -1,0 +1,109 @@
+allowHostPorts: false
+priority: null
+requiredDropCapabilities: null
+allowPrivilegedContainer: false
+runAsUser:
+  type: MustRunAs
+  uid: 1000720001
+users: []
+allowHostDirVolumePlugin: false
+seccompProfiles:
+  - runtime/default
+allowHostIPC: false
+seLinuxContext:
+  type: MustRunAs
+readOnlyRootFilesystem: false
+metadata:
+  annotations:
+    kubernetes.io/description: scc-node-app is the minimal SCC needed to run nodejs nodes on Kubernetes.
+  creationTimestamp: '2024-01-30T05:52:27Z'
+  generation: 6
+  managedFields:
+    - apiVersion: security.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:seLinuxContext':
+          .: {}
+          'f:type': {}
+        'f:readOnlyRootFilesystem': {}
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubernetes.io/description': {}
+        'f:volumes': {}
+        'f:groups': {}
+        'f:defaultAddCapabilities': {}
+        'f:allowedCapabilities': {}
+        'f:supplementalGroups':
+          .: {}
+          'f:type': {}
+        'f:allowHostPID': {}
+        'f:allowHostNetwork': {}
+        'f:allowPrivilegeEscalation': {}
+        'f:users': {}
+        'f:runAsUser':
+          .: {}
+          'f:type': {}
+          'f:uid': {}
+        'f:allowHostPorts': {}
+        'f:seccompProfiles': {}
+        'f:priority': {}
+        'f:requiredDropCapabilities': {}
+        'f:allowPrivilegedContainer': {}
+        'f:allowHostDirVolumePlugin': {}
+        'f:fsGroup':
+          .: {}
+          'f:ranges': {}
+          'f:type': {}
+        'f:allowHostIPC': {}
+      manager: Mozilla
+      operation: Update
+      time: '2024-01-30T10:32:10Z'
+  name: scc-node-app
+  resourceVersion: '710500'
+  uid: cb200cda-8fca-469c-b8db-723cd48ab03e
+fsGroup:
+  ranges:
+    - max: 1000720001
+      min: 1000720001
+  type: MustRunAs
+groups: []
+kind: SecurityContextConstraints
+defaultAddCapabilities: null
+supplementalGroups:
+  type: RunAsAny
+volumes:
+  - awsElasticBlockStore
+  - azureDisk
+  - azureFile
+  - cephFS
+  - cinder
+  - configMap
+  - csi
+  - downwardAPI
+  - emptyDir
+  - ephemeral
+  - fc
+  - flexVolume
+  - flocker
+  - gcePersistentDisk
+  - gitRepo
+  - glusterfs
+  - iscsi
+  - nfs
+  - persistentVolumeClaim
+  - photonPersistentDisk
+  - portworxVolume
+  - projected
+  - quobyte
+  - rbd
+  - scaleIO
+  - secret
+  - storageOS
+  - vsphere
+allowHostPID: false
+allowHostNetwork: false
+allowPrivilegeEscalation: false
+apiVersion: security.openshift.io/v1
+allowedCapabilities:
+  - SYS_RESOURCE
