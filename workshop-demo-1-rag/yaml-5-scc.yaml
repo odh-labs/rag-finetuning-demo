@@ -4,7 +4,7 @@ requiredDropCapabilities: null
 allowPrivilegedContainer: false
 runAsUser:
  type: MustRunAs
- uid: 1000
+ uid: 1000720001
 users: []
 allowHostDirVolumePlugin: false
 seccompProfiles:
@@ -21,8 +21,8 @@ metadata:
  name: scc-node-app
 fsGroup:
  ranges:
-   - max: 1000
-     min: 1000
+   - max: 1000720001
+     min: 1000720001
  type: MustRunAs
 groups: []
 kind: SecurityContextConstraints
