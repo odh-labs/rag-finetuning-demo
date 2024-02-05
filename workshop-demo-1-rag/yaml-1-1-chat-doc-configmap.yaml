@@ -4,5 +4,5 @@ metadata:
   name: chat-doc-configmap
   namespace: llm-rag
 data:
-  INFERENCE_SERVER_URL: hf-text-generation-inference-server.llm-rag.svc.cluster.local
+  INFERENCE_SERVER_URL: 'http://hf-text-generation-inference-server.llm-rag.svc.cluster.local:3000'
   REDIS_HOST: redis-stack-server.redis.svc.cluster.local
