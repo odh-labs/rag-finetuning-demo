@@ -5,4 +5,4 @@ metadata:
   namespace: llm-rag
 data:
   INFERENCE_SERVER_URL: hf-text-generation-inference-server.llm-rag.svc.cluster.local
-  REDIS_HOST: redis-stack.redis.svc.cluster.local
+  REDIS_HOST: redis-stack-server.redis.svc.cluster.local
