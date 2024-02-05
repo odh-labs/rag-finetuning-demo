@@ -2,7 +2,7 @@
 apiVersion: v1
 metadata:
  name: hf-text-generation-inference-server-configmap
- namespace: llm
+ namespace: llm-rag
 data:
  HOST: 0.0.0.0
  HUGGINGFACE_HUB_CACHE: /models-cache
