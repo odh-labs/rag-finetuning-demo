@@ -3,24 +3,11 @@ apiVersion: v1
 metadata:
   name: models-cache
   namespace: llm-rag
-  annotations:
-    pv.kubernetes.io/bind-completed: 'yes'
-    pv.kubernetes.io/bound-by-controller: 'yes'
-    volume.beta.kubernetes.io/storage-provisioner: ebs.csi.aws.com
-    volume.kubernetes.io/storage-provisioner: ebs.csi.aws.com
-  finalizers:
-    - kubernetes.io/pvc-protection
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 50Gi
+      storage: 60Gi
   storageClassName: gp3
   volumeMode: Filesystem
-status:
-  phase: Bound
-  accessModes:
-    - ReadWriteOnce
-  capacity:
-    storage: 30Gi
