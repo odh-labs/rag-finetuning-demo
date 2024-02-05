@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: chat-doc-v1
+  namespace: llm-rag
+  labels:
+    app: chat-doc-v1
+spec:
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: 8501-tcp
+      protocol: TCP
+      port: 8501
+      targetPort: 8501
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  selector:
+    app: chat-doc-v1
