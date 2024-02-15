@@ -1,5 +1,5 @@
-apiVersion: maistra.io/v1
-kind: ServiceMeshMember
+kind: KnativeServing
+apiVersion: operator.knative.dev/v1beta1
 metadata:
   name: default
   namespace: knative-serving
