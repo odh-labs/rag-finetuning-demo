@@ -4,5 +4,5 @@ metadata:
   name: chat-doc-configmap
   namespace: llm-rag
 data:
-  INFERENCE_SERVER_URL: 'https://llm-caikit-llm.apps.rosa-hswmb.lax9.p1.openshiftapps.com/api/v1/task/text-generation:443'
+  INFERENCE_SERVER_URL: 'https://llm-modelserver-llm.apps.rosa-ltrwt.2rfo.p1.openshiftapps.com/api/v1/task/text-generation:443'
   REDIS_HOST: redis-stack-server.redis.svc.cluster.local
