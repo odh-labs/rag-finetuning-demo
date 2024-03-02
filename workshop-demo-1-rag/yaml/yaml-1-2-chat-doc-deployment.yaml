@@ -22,7 +22,7 @@ spec:
             defaultMode: 420
       containers:
         - name: chat-doc-v1
-          image: quay.io/nxu/chat-doc-v1:0.0.9
+          image: quay.io/nxu/chat-doc-tgis:0.4
           ports:
             - containerPort: 8501
               protocol: TCP
