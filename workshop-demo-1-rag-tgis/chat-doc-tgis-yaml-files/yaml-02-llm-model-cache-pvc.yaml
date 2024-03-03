@@ -1,0 +1,13 @@
+﻿kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: models-cache
+  namespace: llm-rag
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 60Gi
+  storageClassName: gp3
+  volumeMode: Filesystem
