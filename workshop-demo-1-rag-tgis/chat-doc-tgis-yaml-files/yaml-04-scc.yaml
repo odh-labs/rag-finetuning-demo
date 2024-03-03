@@ -1,0 +1,63 @@
+﻿apiVersion: security.openshift.io/v1
+allowHostPorts: false
+priority: null
+requiredDropCapabilities: null
+allowPrivilegedContainer: false
+runAsUser:
+ type: MustRunAs
+ uid: 1000720001
+users: []
+allowHostDirVolumePlugin: false
+seccompProfiles:
+ - runtime/default
+allowHostIPC: false
+seLinuxContext:
+ type: MustRunAs
+readOnlyRootFilesystem: false
+metadata:
+ annotations:
+   kubernetes.io/description: >-
+     scc-node-app is the minimal SCC needed to run nodejs nodes on Kubernetes.
+ generation: 1
+ name: scc-node-app
+fsGroup:
+ ranges:
+   - max: 1000720001
+     min: 1000720001
+ type: MustRunAs
+groups: []
+kind: SecurityContextConstraints
+defaultAddCapabilities: null
+supplementalGroups:
+ type: RunAsAny
+volumes:
+ - awsElasticBlockStore
+ - azureDisk
+ - azureFile
+ - cephFS
+ - cinder
+ - configMap
+ - csi
+ - downwardAPI
+ - emptyDir
+ - ephemeral
+ - fc
+ - flexVolume
+ - flocker
+ - gcePersistentDisk
+ - gitRepo
+ - glusterfs
+ - iscsi
+ - nfs
+ - persistentVolumeClaim
+ - photonPersistentDisk
+ - portworxVolume
+ - projected
+ - quobyte
+ - rbd
+ - scaleIO
+ - secret
+ - storageOS
+ - vsphere
+allowHostPID: false
+allowHostNetwork: false
