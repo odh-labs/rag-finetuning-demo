@@ -1,0 +1,10 @@
+﻿kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: chat-doc-configmap
+  namespace: llm-rag
+data:
+  CERTIFICATE_CHAIN_FILE: /app/rag-ssl.pem
+  INFERENCE_SERVER_URL: 'https://llm-modelserver-llm.apps.rosa-ltrwt.2rfo.p1.openshiftapps.com'
+  MODEL_ID: Llama-2-7b-chat-hf-sharded-bf16-fine-tuned
+  REDIS_HOST: redis-stack-server.redis.svc.cluster.local
