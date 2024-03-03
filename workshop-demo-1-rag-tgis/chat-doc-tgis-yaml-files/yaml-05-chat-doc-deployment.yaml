@@ -1,0 +1,50 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: chat-doc-v1
+  namespace: llm-rag
+  labels:
+    app: chat-doc-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-doc-v1
+  template:
+    metadata:
+      labels:
+        app: chat-doc-v1
+    spec:
+      volumes:
+        - name: ssl-cert
+          secret:
+            secretName: chat-doc-secret
+            defaultMode: 420
+      containers:
+        - name: chat-doc-v1
+          image: quay.io/nxu/chat-doc-tgis:0.4
+          ports:
+            - containerPort: 8501
+              protocol: TCP
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: ssl-cert
+              readOnly: true
+              mountPath: /app/rag-ssl.pem
+              subPath: rag-ssl.pem          
+          envFrom:
+            - configMapRef:
+                name: chat-doc-configmap
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        runAsUser: 1000720001
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
